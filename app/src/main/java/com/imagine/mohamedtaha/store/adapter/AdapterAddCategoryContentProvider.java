@@ -2,10 +2,14 @@ package com.imagine.mohamedtaha.store.adapter;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.imagine.mohamedtaha.store.R;
@@ -19,21 +23,16 @@ public class AdapterAddCategoryContentProvider extends RecyclerView.Adapter<Adap
     //class variables for the cursor that holds category data and the Context
     private Cursor mCursor;
     private Context mContext;
-    //  private List<CategoryFileds>categoryFiledses;
-
-    //Constrctor  for the CategoryCursorAdapter that initializes the Context
-    public AdapterAddCategoryContentProvider(Context context) {
-        this.mContext = context;
-//        this.categoryFiledses = categoryFiledses;
-
-    }
-
     private showDetial mListener;
+    private showSale showSale;
+    private showEdit showEdit;
 
-    public AdapterAddCategoryContentProvider(showDetial listener) {
+
+    public AdapterAddCategoryContentProvider(showDetial listener, Context mContext, showSale showSale, showEdit showEdit) {
         this.mListener = listener;
-//        this.categoryFiledses = categoryFiledses;
-
+        this.mContext = mContext;
+        this.showSale = showSale;
+        this.showEdit = showEdit;
     }
 
     //Called when viewHolders are called to fill a RecycleView.
@@ -62,37 +61,28 @@ public class AdapterAddCategoryContentProvider extends RecyclerView.Adapter<Adap
 
     @Override
     public void onBindViewHolder(CategoryViewHolder holder, int position) {
-/*
-        CategoryFileds categoryFileds = categoryFiledses.get(position);
-        holder.idCategoryView.setText(categoryFileds.getId());
-        holder.nameCategoryView.setText(categoryFileds.getNameGategory());
-        holder.dateCategoryView.setText(categoryFileds.getDate());*/
-        //Indices for the _id , de
-        int idIndex = mCursor.getColumnIndex(TaskEntry._ID);
-        int nameCategoryIndex = mCursor.getColumnIndex(TaskEntry.KEY_NAME_CATEGORY);
-        int dateIndex = mCursor.getColumnIndex(TaskEntry.KEY_DATE);
-        int timeIndex = mCursor.getColumnIndex(TaskEntry.KEY_TIME);
+
+        int product_name_index = mCursor.getColumnIndex(TaskEntry.KEY_PRODUCT_NAME);
+        int product_price_index = mCursor.getColumnIndex(TaskEntry.KEY_PRICE);
+        int quantity_index = mCursor.getColumnIndex(TaskEntry.KEY_QUANTITY);
+        int product_picture_index = mCursor.getColumnIndex(TaskEntry.KEY_PICTURE);
 
         mCursor.moveToPosition(position); //get to the right location in the cursor
 
         //Determine the values of the wanted data
-        final int id = mCursor.getInt(idIndex);
-        String nameCategory = mCursor.getString(nameCategoryIndex);
-        String date = mCursor.getString(dateIndex);
-        String  time = mCursor.getString(timeIndex);
+        String product_name = mCursor.getString(product_name_index);
+        String product_price = mCursor.getString(product_price_index);
+        String product_quantity = mCursor.getString(quantity_index);
+        byte[] product_picture = mCursor.getBlob(product_picture_index);
+
+        Bitmap bitmap = BitmapFactory.decodeByteArray(product_picture, 0, product_picture.length);
 
         //Set values
-        // holder.itemView.setTag(id);
-        holder.idCategoryView.setText(id + "");
-        holder.nameCategoryView.setText(nameCategory);
-        holder.dateCategoryView.setText(date);
-        holder.timeCategoryView.setText(time);
+        holder.product_name_view.setText(product_name);
+        holder.product_price_view.setText(product_price);
+        holder.quantity_view.setText(product_quantity);
+        holder.product_picture.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 200, 200, false));
 
-
-    }
-
-    public interface showDetial {
-        void itemShowDetail(Cursor cursor);
     }
 
     //Returns the number of items todisplay
@@ -123,20 +113,54 @@ public class AdapterAddCategoryContentProvider extends RecyclerView.Adapter<Adap
         return temp;
     }
 
+    public interface showDetial {
+        void itemShowDetail(Cursor cursor);
+    }
+
+    public interface showSale {
+        void itemShowSale(Cursor cursor);
+    }
+
+    public interface showEdit {
+        void itemShowEdit(Cursor cursor);
+    }
+
     //Inner class for creating ViewHolders
     class CategoryViewHolder extends RecyclerView.ViewHolder {
         //Class variables for the name category and date category
-        TextView idCategoryView;
-        TextView nameCategoryView;
-        TextView dateCategoryView;
-        TextView timeCategoryView;
+        TextView product_name_view, product_price_view, quantity_view;
+        ImageView product_picture;
+
+        Button bt_sale, bt_edit;
+
 
         public CategoryViewHolder(final View itemView) {
             super(itemView);
-            idCategoryView = (TextView) itemView.findViewById(R.id.TVIDCategory);
-            nameCategoryView = (TextView) itemView.findViewById(R.id.TVNameCategory);
-            dateCategoryView = (TextView) itemView.findViewById(R.id.TVDate);
-            timeCategoryView = (TextView) itemView.findViewById(R.id.TVTime);
+            product_name_view = (TextView) itemView.findViewById(R.id.tv_product_name);
+            product_price_view = (TextView) itemView.findViewById(R.id.tv_product_price);
+            quantity_view = (TextView) itemView.findViewById(R.id.tv_product_quantity);
+            product_picture = (ImageView) itemView.findViewById(R.id.Image_edit);
+            bt_sale = (Button) itemView.findViewById(R.id.bt_sale);
+            bt_sale.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    int position = getAdapterPosition();
+                    mCursor.moveToPosition(position);
+                    if (mListener != null) showSale.itemShowSale(mCursor);
+
+                }
+            });
+
+            bt_edit = (Button) itemView.findViewById(R.id.bt_edit);
+            bt_edit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    mCursor.moveToPosition(position);
+                    if (mListener != null) showEdit.itemShowEdit(mCursor);
+                }
+            });
 
         }
     }

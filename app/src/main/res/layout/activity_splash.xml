@@ -4,22 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.imagine.mohamedtaha.store.SplashActivity">
+
     <ImageView
         android:id="@+id/imageSplash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/splash_image"
+        android:layout_width="@dimen/marginOneHandredFifty"
+        android:layout_height="@dimen/marginOneHandredFifty"
+        android:layout_centerInParent="true"
         android:scaleType="centerCrop"
-        android:layout_centerInParent="true"/>
+        android:src="@mipmap/ic_reports" />
+
     <TextView
         android:id="@+id/TVIdLogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageSplash"
-        android:text="@string/text_splash"
         android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="@color/primary_text"/>
+        android:text="@string/text_splash"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/text_size_twenty"
+        android:textStyle="bold" />
 
 </RelativeLayout>

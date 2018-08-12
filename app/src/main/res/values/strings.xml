@@ -1,197 +1,55 @@
 <resources>
 
-    <drawable name="actionbar_background">#FF0000</drawable>
-    <color name="color_title">#00FF00</color>
-
-    <string name="app_name">YSYP</string>
-
-    <!-- TODO: Items for menu -->
-    <string name="action_settings">Settings</string>
-    <string name="action_edit">تعديل</string>
-
-    <string name="add_data">إضافة البيانات</string>
-    <string name="add_stocking_warehouse">ترصيد المستودع</string>
-    <string name="add_reportes"> تقارير الرصيد الأول  </string>
-    <string name="reportes"> التقارير  </string>
-    <string name="backup"> نسخةاحتياطية  </string>
-    <string name="import_backup"> استيراد قاعدةالبيانات  </string>
-
-    <string name="add_reportes_daily"> تقارير الحركات اليومية  </string>
-
-    <!-- TODO: Text For Title App and Text Empity RecycleView and ListView -->
-    <string name="title_daily_movements">  الحركات اليومية</string>
-    <string name="title_report_first_balance">  تقرير ترصيدالمستودع</string>
-    <string name="title_report_daily_movements">  تقرير الحركات اليومية</string>
-    <string name="title_all_fragments">  تكويد المستودع</string>
-    <string name="title_report_category">  تقرير الأصناف</string>
-    <string name="title_report_store">  تقرير المخازن</string>
-
-    <string name="title_empty_daily_movements">  لا توجد بيانات ...</string>
-    <string name="title_empty_view_daily_movements"> قم أولاً بإضافة الأصناف والمخازن والأذونات</string>
-    <string name="title_empty_view_daily_movements1">حتى تتمكن من إضافة الحركات اليومية</string>
-    <string name="title_empty_view_store">ابدأ بإضافة المخازن</string>
-    <string name="title_empty_view_permission">ابدأ بإضافة انواع الإذونات</string>
-    <string name="title_empty_view_category">ابدأ بإضافة الأصناف </string>
-    <string name="title_empty_view_stoke_wearehouse"> حتى تستطيع ترصيد المستودع  </string>
+    <string name="app_name">مخازن</string>
+    <string name="title_empty_view_category">ابدأ بإضافة المنتجات </string>
     <string name="content_picture"> لا توجد بيانات</string>
-
-
-    <!-- TODO: Text For Title Frgments -->
-    <string name="add_category">إضافة الأصناف</string>
-    <string name="add_store">إضافة المخازن</string>
-    <string name="add_store_convert">إضافة المخازن المحولة</string>
-
-    <string name="add_permission">إضافة الأذن</string>
-    <string name="title_add_category">إضافة الأصناف</string>
-    <!-- Title text for the empty view, which describes the empty dog house image [CHAR LIMIT=50] -->
-    <string name="empty_view_title_text">It\'s a bit lonely here...</string>
-
-    <!-- Subtitle text for the empty view that prompts the user to add a pet [CHAR LIMIT=50] -->
-    <string name="empty_view_subtitle_text">Get started by adding a Category</string>
-
-    <!-- TODO: Page dialog Add Category -->
-    <string name="name_category">اسم الصنف </string>
-    <string name="number_stoke">رقم الترصيد  </string>
-    <string name="number">الكمية  </string>
-    <string name="name_user">اسم المستخدم </string>
-
-    <string name="natural_category">طبيعة الصنف</string>
-    <string name="notes">ملاحظات </string>
-    <string name="add_category_titile">اضافة الصنف </string>
-    <string name="edit_category_titile">تعديل الصنف </string>
-    <string name="search">ابحث في </string>
-
-    <string name="searchBy">ابحث بـ </string>
-
+    <string name="error_image">يجب إختيار صورة للمنتج </string>
+    <string name="the_galary">الاستوديو</string>
+    <string name="add_category_titile">اضافة المنتج </string>
+    <string name="edit_category_titile">تعديل المنتج </string>
     <string name="BtAdd">إضافة </string>
     <string name="BTDelete">حذف </string>
-    <string name="BTUpdate">تعديل </string>
-    <string name="BtQuery">بحث </string>
-    <!-- Label for editor menu option to save pet and leave editor [CHAR LIMIT=20] -->
-    <string name="action_save">Save</string>
-    <string name="action_search">ٍSearch</string>
-
-    <!-- TODO: Page dialog Add Store -->
-    <string name="add_store_titile">إضافة مخزن</string>
-    <string name="update_store_titile">تعديل مخزن</string>
-    <string name="error_save_store">  لم يتم حفظ المخزن </string>
-    <string name="save_store">  تم حفظ المخزن بنجاح </string>
-    <string name="error_update_store">  لم يتم تعديل المخزن </string>
-    <string name="update_store">  تم تعديل المخزن بنجاح </string>
-    <string name="error_delete_store">  لم يتم حذف المخزن </string>
-    <string name="delete_store">  تم حذف المخزن بنجاح </string>
-    <!-- TODO: Page dialog Add  Permission -->
-    <string name="add_permission_titile">إضافة أذن</string>
-    <string name="update_permission_titile">تعديل أذن</string>
-    <string name="type_permission"> نوع الأذن</string>
-
-    <string name="error_save_permission">  لم يتم حفظ الأذن </string>
-    <string name="save_permission">  تم حفظ الأذن بنجاح </string>
-    <string name="error_update_permission">  لم يتم تعديل الأذن </string>
-    <string name="update_permission">  تم تعديل الأذن بنجاح </string>
-    <string name="error_delete_permission">  لم يتم حذف الأذن </string>
-    <string name="delete_permission">  تم حذف الأذن بنجاح </string>
-    <!-- TODO: Page dialog Add StokeWearehouse -->
-    <string name="first_balance">الرصيد الأول </string>
-    <string name="error_first_balance">يجب اختيار الرصيد الأول </string>
-
-    <string name="add_stoke_titile">إضافة ترصيد المستودع </string>
-    <string name="update_stoke_titile"> تعديل ترصيد المستودع </string>
-    <string name="error_empty_category"> اختر الصنف  </string>
-    <string name="error_empty_store"> اختر المخزن </string>
-
-    <string name="error_save_category">  لم يتم حفظ الصنف </string>
-    <string name="save_category">  تم حفظ الصنف بنجاح </string>
-    <string name="error_update_category">  لم يتم تعديل الصنف </string>
-    <string name="update_category">  تم تعديل الصنف بنجاح </string>
-    <string name="error_delete_category">  لم يتم حذف الصنف </string>
-    <string name="delete_category">  تم حذف الصنف بنجاح </string>
-    <!-- TODO: Page dialog Add Daily Movements -->
-    <string name="add_daily_movement_titile">إضافة الحركات اليومية</string>
-    <string name="update_daily_movement_titile">تعديل الحركات اليومية</string>
-
-    <string name="name_permission">نوع الإذن</string>
-    <string name="incoming"> الوارد</string>
-    <string name="all_store"> كل المخازن</string>
-    <string name="select_type_store"> اسم المخزن</string>
-
-    <string name="issued"> الصادر</string>
-
-    <string name="convert_to"> محول إلى</string>
-    <string name="current_Balance"> الرصيد الحالي</string>
-    <string name="show_current_Balance"> إظهار الرصيد الحالي</string>
-
-    <string name="error_empty_permission"> اختر الإذن</string>
-    <string name="error_save_daily"> لم يتم حفظ الحركة</string>
-    <string name="save_daily"> تم حفظ الحركة بنجاح </string>
-    <string name="error_update_daily"> لم يتم تعديل الحركة</string>
-    <string name="update_daily"> تم تعديل الحركة بنجاح </string>
-    <string name="error_delete_daily"> لم يتم مسح الحركة</string>
-    <string name="delete_daily"> تم مسح الحركة بنجاح </string>
-    <string name="error_empty_text">لا يمكن ترك الحقل فارغ أو تكون قمته 0 </string>
-    <string name="error_exist_name">تم تسجيل اسم المخزن من قبل </string>
-    <string name="error_exist_permission">تم تسجيل اسم الإذن من قبل </string>
-    <string name="error_exist_category">تم تسجيل اسم الصنف من قبل </string>
-    <string name="this_store_used">هذا المخزن مستخدم ولا يمكن مسحه</string>
-    <string name="this_store_not_updated">هذا المخزن مستخدم ولا يمكن تعديله</string>
-    <string name="this_category_not_updated">هذا الصنف مستخدم ولا يمكن تعديله أوحذفه</string>
-    <string name="this_movement_not_allow">هذه الحركة لا يمكن مسحها \n بسبب وجود حركات بعدها</string>
-
-    <string name="this_permission_used">هذا الإذن مستخدم ولا يمكن مسحه</string>
-    <string name="this_permission_not_updated">هذا الإذن مستخدم ولا يمكن تعديله</string>
-
-    <string name="this_category_used">هذا الصنف مستخدم ولا يمكن مسحه</string>
-    <string name="error_same_store">لا يمكن تحويل الصنف لنفس المخزن </string>
-    <string name="error_convert_to">يجب اختيار المخزن المحول له الصنف</string>
-    <string name="error_issued_balance">الرصيد الصادر أكبر من الرصيد المتاح</string>
-
+    <string name="error_empty_text">لا يمكن ترك الحقل فارغ  </string>
+    <string name="error_empty_text_or_zero">لا يمكن ترك الحقل فارغ أو تكون قمته 0 </string>
     <!-- Dialog button text for the option to confirm deleting the current category [CHAR LIMIT=20] -->
     <string name="delete">مسح</string>
+    <string name="order">الإتصال بالمورد</string>
     <!-- Dialog message to ask the user to confirm deleting the current category [CHAR LIMIT=NONE] -->
-    <string name="delete_dialog_msg">هل تريد مسح هذا الصنف ؟ </string>
+    <string name="delete_dialog_msg">هل تريد مسح هذا المنتج ؟ </string>
     <!-- Dialog button text for the option to cancel deletion of the current category [CHAR LIMIT=20] -->
     <string name="cancel">لا</string>
-    <!-- Title for the activity to add a new category [CHAR LIMIT=20] -->
-    <string name="editor_activity_title_new_category">إضافة صنف</string>
 
-    <!-- Title for the activity to edit an existing category [CHAR LIMIT=20] -->
-    <string name="editor_activity_title_edit_category">تعديل صنف</string>
     <!-- Toast message in editor when new category has failed to be inserted [CHAR LIMIT=NONE] -->
-    <string name="editor_insert_category_failed">خطأ في حفظ السنف </string>
+    <string name="editor_insert_category_failed">خطأ في حفظ المنتج </string>
     <!-- Toast message in editor when new category has been successfully inserted [CHAR LIMIT=NONE] -->
-    <string name="editor_insert_category_successful">تم حفظ الصنف بنجاح </string>
+    <string name="editor_insert_category_successful">تم حفظ المنتج بنجاح </string>
 
     <!-- Toast message in editor when current category has failed to be updated [CHAR LIMIT=NONE] -->
-    <string name="editor_update_category_failed">خطأ في تعديل الصنف</string>
+    <string name="editor_update_category_failed">خطأ في تعديل المنتج</string>
+    <string name="error_quantity_lees_zero">لا يمكن أن تكون الكمية أقل من  0</string>
 
     <!-- Toast message in editor when current category was successfully updated [CHAR LIMIT=NONE] -->
-    <string name="editor_update_category_successful">تم تعديل الصنف بنجاح </string>
+    <string name="editor_update_category_successful">تم تعديل المنتج بنجاح </string>
 
     <!-- Toast message in editor when current category has failed to be deleted [CHAR LIMIT=NONE] -->
-    <string name="editor_delete_Category_failed">خطأ في مسح الصنف </string>
+    <string name="editor_delete_Category_failed">خطأ في مسح المنتج </string>
     <!-- Toast message in editor when current category was successfully deleted [CHAR LIMIT=NONE] -->
-    <string name="editor_delete_category_successful">تم مسح الصنف بنجاح </string>
+    <string name="editor_delete_category_successful">تم مسح المنتج بنجاح </string>
 
+    <string name="product_name"> اسم المنتج</string>
+    <string name="product_price"> سعر المنتج</string>
+    <string name="product_quantity">الكمية</string>
+    <string name="product_picture">صورةالمنتج</string>
+    <string name="supplier_name"> اسم المورد</string>
+    <string name="decrice"> +</string>
+    <string name="in_decrice"> -</string>
 
-    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
-    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
-
-    <!-- Dialog button text for the option to discard a user's changes [CHAR LIMIT=20] -->
-    <string name="discard">Discard</string>
-    <!-- Dialog button text for the option to keep editing the current pet [CHAR LIMIT=20] -->
-    <string name="keep_editing">Keep Editing</string>
-
-    <!-- TODO: Page custom_store_listview -->
-    <string name="type_store"> المخزن</string>
-    <string name="name_type_store"> اسم المخزن</string>
-
-    <string name="data_store">اخر تعديل</string>
-    <string name="m_store"> م</string>
-    <string name="data_created"> تاريخ الإنشاء</string>
+    <string name="supplier_phone_number">رقم تليفون المورد</string>
+    <string name="bt_sale">بيع</string>
+    <string name="bt_edit">تعديل</string>
 
     <!-- TODO: Splach Activity -->
 
-    <string name="text_splash">  مخزنك في جوالك </string>
-    <dimen name="title_text_size">20dp</dimen>
+    <string name="text_splash">  مخزنك</string>
 
 </resources>

@@ -1,65 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardUseCompatPadding="true"
     android:layout_gravity="center"
+    android:orientation="horizontal"
     app:cardBackgroundColor="@color/icons"
-    app:cardCornerRadius="8dp"
-    app:contentPadding="10dp">
+    app:cardCornerRadius="@dimen/marginEight"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="@dimen/marginTopTen">
+
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:stretchColumns="*"
         android:shrinkColumns="*"
-        >
-        <TableRow>
+        android:stretchColumns="*">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/Image_edit"
+                android:layout_width="@dimen/marginOneHandredFifty"
+                android:layout_height="@dimen/marginOneHandred"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/Image_edit"
+                android:gravity="end"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/TVNameCategory"
-                    style="@style/CardViewStyleDataForStore"
+                    style="@style/CardViewStyleDataProductName"
+                    android:text="@string/product_name" />
+
+                <TextView
+                    android:id="@+id/tv_product_name"
+                    style="@style/CardViewStyleNameProduct"
+                    android:layout_toLeftOf="@+id/Image_edit"
+
                     />
-                <TextView
-                    style="@style/CardViewStyleMain"
-                    android:text=" اسم الصتف"/>
-            <TextView
-                android:id="@+id/TVIDCategory"
-                style="@style/CardViewStyleData"
-                />
-            <TextView
-                android:text="@string/m_store"
-                style="@style/CardViewStyleMain"
-                />
 
 
-    </TableRow>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
         <TableRow>
 
             <TextView
-                android:layout_marginTop="10dp"
-                android:id="@+id/TVDate"
-                style="@style/CardViewStyleData"
-                />
+                android:id="@+id/tv_product_price"
+                style="@style/CardViewStyleMain" />
+
             <TextView
-                android:layout_marginTop="10dp"
-                android:id="@+id/TVTime"
                 style="@style/CardViewStyleData"
-                />
+                android:text="@string/product_price" />
+
             <TextView
-                android:layout_marginTop="10dp"
+                android:id="@+id/tv_product_quantity"
                 style="@style/CardViewStyleMain"
-                android:text="تاريخ اخر تعديل"
+
                 />
+
+            <TextView
+                style="@style/CardViewStyleData"
+                android:text="@string/product_quantity" />
+
+
         </TableRow>
 
-    </TableLayout>
-    <ImageView
-        android:id="@+id/Image_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_action_more_vert"
+        <TableRow>
 
-        />
+            <Button
+                android:id="@+id/bt_sale"
+                style="@style/ButtonSale"
+                android:text="@string/bt_sale" />
+
+            <Button
+                android:id="@+id/bt_edit"
+                style="@style/ButtonSale"
+                android:text="@string/bt_edit" />
+
+
+        </TableRow>
+    </TableLayout>
+
 </android.support.v7.widget.CardView>
